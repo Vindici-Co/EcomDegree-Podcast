@@ -14,6 +14,7 @@ import "./models/User.js";
 import episodeRouter from "./routes/episodeRoutes.js";
 import testRouter from "./routes/route2.js";
 import userRouter from "./routes/userRouter.js";
+import klaviyoRouter from "./routes/klaviyoRoutes.js";
 import connectDB from "./config/db.js";
 import seasonRouter from "./routes/seasonRoutes.js"
 import analyticsRouter from "./routes/analyticsRoutes.js";
@@ -35,6 +36,7 @@ app.use(testRouter);
 app.use("/users", userRouter);
 app.use("/analytics", analyticsRouter);
 app.use("/youtube", youtubeRouter)
+app.use("/klaviyo", klaviyoRouter);
 
 //const PORT = config.get("PORT");
 var PORT = process.env.PORT || 5000;
