@@ -2,6 +2,7 @@ import React from "react";
 import incrementValue from "./middleware/Counter/incrementValue";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
+import PrimaryVideoCard from "./views/components/PrimaryVideoCard";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +18,11 @@ function App() {
       >
         click to increment
       </button>
+      <PrimaryVideoCard
+        thumbnailUrl="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
+        description="description"
+        title="title"
+      />
     </>
   );
 }
