@@ -1,7 +1,7 @@
 // my-theme.ts
 import { DefaultTheme } from "styled-components";
 
-const theme: DefaultTheme = {
+const ecomDegreeTheme: DefaultTheme = {
   borderRadius: "5px",
 
   colors: {
@@ -29,4 +29,4 @@ const theme: DefaultTheme = {
   },
 };
 
-export default theme;
+export default ecomDegreeTheme;
