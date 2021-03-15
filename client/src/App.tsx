@@ -3,7 +3,7 @@ import incrementValue from "./middleware/Counter/incrementValue";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
 import PrimaryVideoCard from "./views/components/PrimaryVideoCard";
-import LearningCard from "./views/components/LearningCard/LearningCard";
+import LearningCard from "./views/components/LearningCard";
 
 function App() {
 	const dispatch = useDispatch();
@@ -24,13 +24,7 @@ function App() {
 				description="description"
 				title="title"
 			/>
-			<LearningCard
-				cardImg="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1OtaIHbKuEeGtlTLhhR0RQHaE8%26pid%3DApi&f=1"
-				upperTitle="amazon upper title"
-				description="amazon brand description test"
-				lowerTitle="amazon lower title"
-				btnColor="orange"
-			/>
+
 		</>
 	);
 }

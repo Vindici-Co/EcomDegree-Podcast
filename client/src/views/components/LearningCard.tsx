@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 /**
- * @Interface LearningCardProps
+ * @Interface ILearningCardProps
  * @cardImg { any } image on left side of card
  * @upperTitle { string } greyed out title at top of card
  * @description { string } middle desc of card
@@ -10,7 +10,7 @@ import styled from "styled-components";
  * @btnColor { string } color of btn
  */
 
-export interface LearningCardProps {
+export interface ILearningCardProps {
 	cardImg: any;
 	upperTitle: string;
 	description: string;
@@ -67,9 +67,9 @@ const LowerTitle = styled.p`
 	text-align: left;
 `;
 
-const LearningCard = (props: LearningCardProps): JSX.Element => {
+const LearningCard: React.FC<ILearningCardProps> = (props: ILearningCardProps) => {
 	const Button = styled.button`
-		background: ${(p: LearningCardProps) => p.btnColor};
+		background: ${(p: ILearningCardProps) => p.btnColor};
 		font-family: ${props => props.theme.fonts.main};
 		color: white;
 		border: none;
@@ -77,7 +77,7 @@ const LearningCard = (props: LearningCardProps): JSX.Element => {
 		padding: 7px 33px;
 		cursor: pointer;
 		margin: 24px 0 0 0;
-		box-shadow: ${(p: LearningCardProps) => `-15px 10px 30px ${p.btnColor}`};
+		box-shadow: ${(p: ILearningCardProps) => `-15px 10px 30px ${p.btnColor}`};
 	`;
 
 	return (
