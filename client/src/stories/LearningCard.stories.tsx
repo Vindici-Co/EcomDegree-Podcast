@@ -14,9 +14,6 @@ const Template: Story<ILearningCardProps> = (args) => <LearningCard {...args} />
 
 export const Primary = Template.bind({});
 Primary.args = {
-    cardImg:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1OtaIHbKuEeGtlTLhhR0RQHaE8%26pid%3DApi&f=1",
-    upperTitle:"amazon upper title",
-    description:"amazon brand description test",
-    lowerTitle:"amazon lower title",
-    btnColor:"orange",
+    cardThumbnail: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1OtaIHbKuEeGtlTLhhR0RQHaE8%26pid%3DApi&f=1",
+    platformType: "shopify"
 };
