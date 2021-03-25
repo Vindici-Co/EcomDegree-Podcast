@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ecomTheme from "../../../styles/theme";
 import VideoCard from "./VideoCard";
 /**
  * @interface IPrimaryVideoCardProps
@@ -15,15 +14,8 @@ export interface IPrimaryVideoCardProps {
   thumbnailUrl: string;
 }
 
-const VideoCardRoot = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  align-items: flex-start;
-  justify-content: flex-end;
-`;
 
-const PrimaryVideoCard = (props: IPrimaryVideoCardProps) => {
+const PrimaryVideoCard: React.FC<IPrimaryVideoCardProps> = (props: IPrimaryVideoCardProps) => {
   const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
