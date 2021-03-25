@@ -4,6 +4,7 @@ import ecomDegreeTheme from "../src/styles/theme"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  layout: 'centered',
 }
 
 // .storybook/preview.js

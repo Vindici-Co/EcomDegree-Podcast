@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components";
 
@@ -21,7 +22,7 @@ const VideoCardRoot = styled.div`
   height: 100%;
 `;
 
-const VideoCard = (props: IVideoCardProps) => {
+const VideoCard: React.FC<IVideoCardProps> = (props: IVideoCardProps) => {
   const VideoCard = styled.div`
     background-image: url(${(p: IVideoCardProps) => p.thumbnailUrl});
     min-width: 500px;
