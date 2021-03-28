@@ -50,6 +50,7 @@ const Text = styled.p`
 
 const ControlsRoot = styled.div`
   /* #03 Light */
+  /* position: fixed; */
   display: flex;
   flex-direction: row;
   justify-content: center;
