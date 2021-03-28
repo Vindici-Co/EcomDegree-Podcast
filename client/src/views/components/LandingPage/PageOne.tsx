@@ -7,12 +7,12 @@ const TitleDivLeft = styled.p`
 	line-height: 90px;
 	letter-spacing: -2.25px;
 	color: white;
-	font-family: ${props => props.theme.fonts.main};
-	margin-bottom: 0;
+	font-family: ${(props) => props.theme.fonts.main};
+	margin: 0;
 `;
 
 const Orange = styled.span`
-	color: ${props => props.theme.colors.main.orange};
+	color: ${(props) => props.theme.colors.main.orange};
 `;
 
 const LeftDesc = styled.p`
@@ -22,7 +22,7 @@ const LeftDesc = styled.p`
 	line-height: 24px;
 	letter-spacing: 0.5px;
 	text-align: left;
-	font-family: ${props => props.theme.fonts.secondary};
+	font-family: ${(props) => props.theme.fonts.secondary};
 `;
 
 export const PageOneLeft: React.FC = (): JSX.Element => {
@@ -42,7 +42,7 @@ export const PageOneLeft: React.FC = (): JSX.Element => {
 };
 
 const RightTitleContainer = styled.p`
-	font-family: ${props => props.theme.fonts.main};
+	font-family: ${(props) => props.theme.fonts.main};
 	font-size: 84px;
 	font-style: normal;
 	font-weight: 800;
@@ -53,7 +53,7 @@ const RightTitleContainer = styled.p`
 `;
 
 const LargerRightTitle = styled.span`
-	font-family: ${props => props.theme.fonts.main};
+	font-family: ${(props) => props.theme.fonts.main};
 	font-size: 116px;
 	line-height: 0px;
 	letter-spacing: -0.03em;
@@ -62,12 +62,12 @@ const LargerRightTitle = styled.span`
 `;
 
 const RightOrange = styled.span`
-	font-family: ${props => props.theme.fonts.main};
+	font-family: ${(props) => props.theme.fonts.main};
 	font-size: 43.3015px;
 	font-weight: 600;
 	letter-spacing: 0em;
 	text-align: left;
-	color: ${props => props.theme.colors.main.orange};
+	color: ${(props) => props.theme.colors.main.orange};
 `;
 
 const RightDesc = styled.p`
@@ -78,18 +78,18 @@ const RightDesc = styled.p`
 	line-height: 14px;
 	letter-spacing: 0em;
 	text-align: left;
-	font-family: ${props => props.theme.fonts.secondary};
+	font-family: ${(props) => props.theme.fonts.secondary};
 `;
 
 export const PageOneRight: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<RightTitleContainer>MIND</RightTitleContainer>
+			{/* <RightTitleContainer>MIND</RightTitleContainer>
 			<br />
 			<LargerRightTitle>SET</LargerRightTitle>
 			<br />
 			<RightOrange>MASTERY</RightOrange>
-			<RightDesc>HOSTED BY: WILLIAM RIVERA</RightDesc>
+			<RightDesc>HOSTED BY: WILLIAM RIVERA</RightDesc> */}
 		</>
 	);
 };

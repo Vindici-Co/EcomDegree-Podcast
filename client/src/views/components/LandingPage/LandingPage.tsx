@@ -7,10 +7,13 @@ import { PageOneLeft, PageOneRight } from "./PageOne";
 import { PageTwoLeft, PageTwoRight } from "./PageTwo";
 import { PageThreeLeft, PageThreeRight } from "./PageThree";
 
+import bgPageOne from "./assets/bgPageOne.png";
+import bgPageTwo from "./assets/bgPageTwo.png";
+
 const Container = styled.div`
 	height: 1080px;
 	width: 1920px;
-	background: ${props => props.theme.colors.main.black};
+	// background: ${(props) => props.theme.colors.main.black};
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -19,31 +22,32 @@ const Container = styled.div`
 	color: white;
 `;
 
-const LeftContainer = styled.div`
+const OuterLeftContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+const InnerLeftContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	// border: 2px solid red;
+	width: 743.688px;
+	height: 349.969px;
+	margin: 0;
 `;
 
 const RightContainer = styled.div`
+	width: 216.41px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// border: 2px solid green;
 `;
 
 const Btns = styled.div`
-	// left: 300px;
-	// top: 800px;
-	// position: absolute;
 	display: flex;
 	width: auto;
-	justify-content: center;
 	color: white;
-	align-self: flex-start;
 `;
 
 const useStyles = makeStyles({
@@ -80,9 +84,9 @@ const useStyles = makeStyles({
 const LandingPage: React.FC = (): JSX.Element => {
 	// different pages
 	const pages = [
-		[<PageOneLeft key="00" />, <PageOneRight key="01" />],
-		[<PageTwoLeft key="10" />, <PageTwoRight key="11" />],
-		[<PageThreeLeft key="20" />, <PageThreeRight key="21" />]
+		[<PageOneLeft key="00" />, <PageOneRight key="01" />, bgPageOne],
+		[<PageTwoLeft key="10" />, <PageTwoRight key="11" />, bgPageTwo],
+		[<PageThreeLeft key="20" />, <PageThreeRight key="21" />, "lightblue"]
 	];
 	const numPages = pages.length;
 
@@ -101,9 +105,14 @@ const LandingPage: React.FC = (): JSX.Element => {
 
 	// JSX
 	return (
-		<Container>
-			<LeftContainer>
-				{pages[page][0]}{" "}
+		<Container
+			style={{
+				backgroundImage: `url(${pages[page][2]})`,
+				backgroundColor: "#030314"
+			}}
+		>
+			<OuterLeftContainer>
+				<InnerLeftContainer>{pages[page][0]} </InnerLeftContainer>
 				<Btns>
 					<IconButton className={classes.minusBtn} onClick={() => handlePageChange(-1)}>
 						<ArrowLeft style={{ fontSize: 50 }} />
@@ -112,7 +121,7 @@ const LandingPage: React.FC = (): JSX.Element => {
 						<ArrowRight style={{ fontSize: 50 }} />
 					</IconButton>
 				</Btns>
-			</LeftContainer>
+			</OuterLeftContainer>
 			<RightContainer>{pages[page][1]}</RightContainer>
 		</Container>
 	);

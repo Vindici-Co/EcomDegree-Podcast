@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PageTwoLego from "./assets/PageTwoLego.png";
 
 const TitleDivLeft = styled.p`
 	font-weight: bold;
@@ -7,16 +8,16 @@ const TitleDivLeft = styled.p`
 	line-height: 90px;
 	letter-spacing: -2.25px;
 	color: white;
-	font-family: ${props => props.theme.fonts.main};
-	margin-bottom: 0;
+	font-family: ${(props) => props.theme.fonts.main};
+	margin: 0;
 `;
 
 const Orange = styled.span`
-	color: ${props => props.theme.colors.main.orange};
+	color: ${(props) => props.theme.colors.main.orange};
 `;
 
 const LeftDesc = styled.p`
-	font-family: ${props => props.theme.fonts.secondary};
+	font-family: ${(props) => props.theme.fonts.secondary};
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -41,33 +42,16 @@ export const PageTwoLeft: React.FC = (): JSX.Element => {
 	);
 };
 
-const RightTitleContainer = styled.p`
-	font-family: Metropolis;
-	font-size: 55px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 55px;
-	letter-spacing: 0em;
-	text-align: left;
-	color: ${props => props.theme.colors.main.orange};
-	font-family: ${props => props.theme.fonts.main};
-`;
-
-const RightWhiteTitle = styled.span`
-	color: white;
-`;
-
 export const PageTwoRight: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<RightTitleContainer>
-				0 TO 10K <br />
-				<RightWhiteTitle>
-					IN 14 DAYS <br />
-				</RightWhiteTitle>
-				SELLING <RightWhiteTitle>A</RightWhiteTitle> <br />
-				LEGO
-			</RightTitleContainer>
+			<img
+				src={PageTwoLego}
+				alt="PageTwoLego"
+				style={{
+					margin: "0px 360px 0px 0px"
+				}}
+			/>
 		</>
 	);
 };
