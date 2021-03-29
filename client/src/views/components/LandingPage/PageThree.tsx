@@ -32,7 +32,7 @@ const LeftDesc = styled.p`
 export const PageThreeLeft: React.FC = () => {
 	return (
 		<>
-			<Fade in={true} timeout={2000}>
+			<Fade in={true} timeout={1500}>
 				<div>
 					<img
 						src={ApplePodcasts}

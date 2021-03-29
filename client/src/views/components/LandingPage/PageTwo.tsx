@@ -30,7 +30,7 @@ const LeftDesc = styled.p`
 export const PageTwoLeft: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<Fade in={true} timeout={2000}>
+			<Fade in={true} timeout={1500}>
 				<TitleDivLeft>
 					Latest Youtube
 					<br /> Video
