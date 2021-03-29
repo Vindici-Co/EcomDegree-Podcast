@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { PageOneLeft, PageOneRight } from "./PageOne";
 import { PageTwoLeft, PageTwoRight } from "./PageTwo";
@@ -37,18 +37,18 @@ const InnerLeftContainer = styled.div`
 	margin: 0;
 `;
 
+const Btns = styled.div`
+	display: flex;
+	width: auto;
+	color: white;
+`;
+
 const RightContainer = styled.div`
 	width: 216.41px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-`;
-
-const Btns = styled.div`
-	display: flex;
-	width: auto;
-	color: white;
 `;
 
 const useStyles = makeStyles({
@@ -88,19 +88,13 @@ const LandingPage: React.FC = (): JSX.Element => {
 	const pages = [
 		[<PageOneLeft key="00" />, <PageOneRight key="01" />, bgPageOne],
 		[<PageTwoLeft key="10" />, <PageTwoRight key="11" />, bgPageTwo],
-		[<PageThreeLeft key="20" />, <PageThreeRight key="21" />, "lightblue"]
+		[<PageThreeLeft key="20" />, <PageThreeRight key="21" />]
 	];
 	const numPages = pages.length;
 
 	// component state
 	const classes = useStyles();
 	const [page, setPage] = useState(0);
-	const [checked, setChecked] = useState(true);
-
-	useEffect(() => {
-		setChecked(false);
-		setChecked(true);
-	});
 
 	// function to handle switching between pages.
 	const handlePageChange = (event: number): void => {
@@ -114,7 +108,7 @@ const LandingPage: React.FC = (): JSX.Element => {
 	// JSX
 	return (
 		<>
-			<Fade in={checked} timeout={1000}>
+			<Fade in={true} timeout={1000}>
 				<div>
 					<Container
 						style={{
