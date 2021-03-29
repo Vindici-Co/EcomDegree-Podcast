@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PageThreeThumbnail from "./assets/PageThreeThumbnail.png";
 import ApplePodcasts from "./assets/ApplePodcasts.png";
+import { Fade } from "@material-ui/core";
 
 const TitleDivLeft = styled.p`
 	font-family: ${(props) => props.theme.fonts.main};
@@ -31,22 +32,26 @@ const LeftDesc = styled.p`
 export const PageThreeLeft: React.FC = () => {
 	return (
 		<>
-			<img
-				src={ApplePodcasts}
-				alt="ApplePodcasts"
-				style={{
-					height: "58.18px",
-					width: "240px"
-				}}
-			/>
-			<TitleDivLeft>
-				Listen Now <br />
-				<Orange>Mindset Mastery</Orange>
-				<LeftDesc>
-					When our team provides design and digital marketing fashion
-					<br /> design. The app provides design and digital graphic design.
-				</LeftDesc>
-			</TitleDivLeft>
+			<Fade in={true} timeout={2000}>
+				<div>
+					<img
+						src={ApplePodcasts}
+						alt="ApplePodcasts"
+						style={{
+							height: "58.18px",
+							width: "240px"
+						}}
+					/>
+					<TitleDivLeft>
+						Listen Now <br />
+						<Orange>Mindset Mastery</Orange>
+						<LeftDesc>
+							When our team provides design and digital marketing fashion
+							<br /> design. The app provides design and digital graphic design.
+						</LeftDesc>
+					</TitleDivLeft>
+				</div>
+			</Fade>
 		</>
 	);
 };
@@ -54,14 +59,16 @@ export const PageThreeLeft: React.FC = () => {
 export const PageThreeRight: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<img
-				src={PageThreeThumbnail}
-				alt="PageThreeThumbnail"
-				style={{
-					margin: "0px 260px 0px 0px",
-					overflow: "hidden"
-				}}
-			/>
+			<Fade in={true} timeout={2000}>
+				<img
+					src={PageThreeThumbnail}
+					alt="PageThreeThumbnail"
+					style={{
+						margin: "0px 260px 0px 0px",
+						overflow: "hidden"
+					}}
+				/>
+			</Fade>
 		</>
 	);
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Fade } from "@material-ui/core/";
 
 const TitleDivLeft = styled.p`
 	font-weight: bold;
@@ -28,15 +29,17 @@ const LeftDesc = styled.p`
 export const PageOneLeft: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<TitleDivLeft>
-				6+ Hours of <br />
-				<Orange>Free Game.</Orange>
-				<LeftDesc>
-					When our team provides design and digital marketing fashion design. The
-					<br />
-					app provides design and digital graphic design.
-				</LeftDesc>
-			</TitleDivLeft>
+			<Fade in={true} timeout={2000}>
+				<TitleDivLeft>
+					6+ Hours of <br />
+					<Orange>Free Game.</Orange>
+					<LeftDesc>
+						When our team provides design and digital marketing fashion design. The
+						<br />
+						app provides design and digital graphic design.
+					</LeftDesc>
+				</TitleDivLeft>
+			</Fade>
 		</>
 	);
 };

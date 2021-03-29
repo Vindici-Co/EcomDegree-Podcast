@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PageTwoLego from "./assets/PageTwoLego.png";
+import { Fade } from "@material-ui/core/";
 
 const TitleDivLeft = styled.p`
 	font-weight: bold;
@@ -29,15 +30,17 @@ const LeftDesc = styled.p`
 export const PageTwoLeft: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<TitleDivLeft>
-				Latest Youtube
-				<br /> Video
-				<LeftDesc>
-					A Case Study on how EDU student Sam Maxwell made $10,000 his first <br />
-					weeek dropshipping. Tune in to learn you can apply Sam’s key points of <br />
-					advice to your ecommerce business.
-				</LeftDesc>
-			</TitleDivLeft>
+			<Fade in={true} timeout={2000}>
+				<TitleDivLeft>
+					Latest Youtube
+					<br /> Video
+					<LeftDesc>
+						A Case Study on how EDU student Sam Maxwell made $10,000 his first <br />
+						weeek dropshipping. Tune in to learn you can apply Sam’s key points of <br />
+						advice to your ecommerce business.
+					</LeftDesc>
+				</TitleDivLeft>
+			</Fade>
 		</>
 	);
 };
@@ -45,13 +48,15 @@ export const PageTwoLeft: React.FC = (): JSX.Element => {
 export const PageTwoRight: React.FC = (): JSX.Element => {
 	return (
 		<>
-			<img
-				src={PageTwoLego}
-				alt="PageTwoLego"
-				style={{
-					margin: "0px 360px 0px 0px"
-				}}
-			/>
+			<Fade in={true} timeout={2000}>
+				<img
+					src={PageTwoLego}
+					alt="PageTwoLego"
+					style={{
+						margin: "0px 360px 0px 0px"
+					}}
+				/>
+			</Fade>
 		</>
 	);
 };

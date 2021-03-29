@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { makeStyles } from "@material-ui/core/";
-import { IconButton } from "@material-ui/core";
-import { ArrowRight, ArrowLeft } from "@material-ui/icons";
+import React, { useEffect, useState } from "react";
+
 import { PageOneLeft, PageOneRight } from "./PageOne";
 import { PageTwoLeft, PageTwoRight } from "./PageTwo";
 import { PageThreeLeft, PageThreeRight } from "./PageThree";
+
+import { makeStyles, Fade } from "@material-ui/core/";
+import { IconButton } from "@material-ui/core";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
+import styled from "styled-components";
 
 import bgPageOne from "./assets/bgPageOne.png";
 import bgPageTwo from "./assets/bgPageTwo.png";
@@ -93,6 +95,12 @@ const LandingPage: React.FC = (): JSX.Element => {
 	// component state
 	const classes = useStyles();
 	const [page, setPage] = useState(0);
+	const [checked, setChecked] = useState(true);
+
+	useEffect(() => {
+		setChecked(false);
+		setChecked(true);
+	});
 
 	// function to handle switching between pages.
 	const handlePageChange = (event: number): void => {
@@ -105,25 +113,37 @@ const LandingPage: React.FC = (): JSX.Element => {
 
 	// JSX
 	return (
-		<Container
-			style={{
-				backgroundImage: `url(${pages[page][2]})`,
-				backgroundColor: "#030314"
-			}}
-		>
-			<OuterLeftContainer>
-				<InnerLeftContainer>{pages[page][0]} </InnerLeftContainer>
-				<Btns>
-					<IconButton className={classes.minusBtn} onClick={() => handlePageChange(-1)}>
-						<ArrowLeft style={{ fontSize: 50 }} />
-					</IconButton>
-					<IconButton className={classes.plusBtn} onClick={() => handlePageChange(1)}>
-						<ArrowRight style={{ fontSize: 50 }} />
-					</IconButton>
-				</Btns>
-			</OuterLeftContainer>
-			<RightContainer>{pages[page][1]}</RightContainer>
-		</Container>
+		<>
+			<Fade in={checked} timeout={1000}>
+				<div>
+					<Container
+						style={{
+							backgroundImage: `url(${pages[page][2]})`,
+							backgroundColor: "#030314"
+						}}
+					>
+						<OuterLeftContainer>
+							<InnerLeftContainer>{pages[page][0]} </InnerLeftContainer>
+							<Btns>
+								<IconButton
+									className={classes.minusBtn}
+									onClick={() => handlePageChange(-1)}
+								>
+									<ArrowLeft style={{ fontSize: 50 }} />
+								</IconButton>
+								<IconButton
+									className={classes.plusBtn}
+									onClick={() => handlePageChange(1)}
+								>
+									<ArrowRight style={{ fontSize: 50 }} />
+								</IconButton>
+							</Btns>
+						</OuterLeftContainer>
+						<RightContainer>{pages[page][1]}</RightContainer>
+					</Container>
+				</div>
+			</Fade>
+		</>
 	);
 };
 export default LandingPage;
