@@ -13,7 +13,6 @@ import bgPageTwo from "./assets/bgPageTwo.png";
 const Container = styled.div`
 	height: 1080px;
 	width: 1920px;
-	// background: ${(props) => props.theme.colors.main.black};
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -52,7 +51,8 @@ const Btns = styled.div`
 
 const useStyles = makeStyles({
 	minusBtn: {
-		background: "grey",
+		background: "#F49A12",
+		color: "white",
 		height: "56px",
 		width: "60px",
 		left: " 0px",
@@ -60,7 +60,7 @@ const useStyles = makeStyles({
 		borderRadius: "20px",
 		marginRight: "20px",
 		"&:hover": {
-			background: "grey"
+			background: "#F47A12"
 		}
 	},
 	plusBtn: {
@@ -72,7 +72,7 @@ const useStyles = makeStyles({
 		top: " 0px",
 		borderRadius: "20px",
 		"&:hover": {
-			background: "#F49A12"
+			background: "#F47A12"
 		}
 	}
 });

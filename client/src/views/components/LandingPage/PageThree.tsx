@@ -58,7 +58,8 @@ export const PageThreeRight: React.FC = (): JSX.Element => {
 				src={PageThreeThumbnail}
 				alt="PageThreeThumbnail"
 				style={{
-					margin: "0px 260px 0px 0px"
+					margin: "0px 260px 0px 0px",
+					overflow: "hidden"
 				}}
 			/>
 		</>
