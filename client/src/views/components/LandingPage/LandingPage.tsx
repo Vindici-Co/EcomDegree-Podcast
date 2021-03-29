@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
 
 import { PageOneLeft, PageOneRight } from "./PageOne";
 import { PageTwoLeft, PageTwoRight } from "./PageTwo";
@@ -13,8 +14,8 @@ import bgPageOne from "./assets/bgPageOne.png";
 import bgPageTwo from "./assets/bgPageTwo.png";
 
 const Container = styled.div`
-	height: 1080px;
-	width: 1920px;
+	height: 100vh;
+	width: 100vw;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -26,6 +27,7 @@ const Container = styled.div`
 const OuterLeftContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	// border: 1px solid red;
 `;
 
 const InnerLeftContainer = styled.div`
@@ -49,6 +51,8 @@ const RightContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	// border: 1px solid red;
+	height: 96%;
 `;
 
 const useStyles = makeStyles({
@@ -108,12 +112,15 @@ const LandingPage: React.FC = (): JSX.Element => {
 	// JSX
 	return (
 		<>
+			<Navbar />
 			<Fade in={true} timeout={1000}>
-				<div>
+				<>
 					<Container
 						style={{
 							backgroundImage: `url(${pages[page][2]})`,
-							backgroundColor: "#030314"
+							backgroundColor: "#030314",
+							backgroundRepeat: "no-repeat",
+							backgroundSize: "cover"
 						}}
 					>
 						<OuterLeftContainer>
@@ -135,7 +142,7 @@ const LandingPage: React.FC = (): JSX.Element => {
 						</OuterLeftContainer>
 						<RightContainer>{pages[page][1]}</RightContainer>
 					</Container>
-				</div>
+				</>
 			</Fade>
 		</>
 	);
