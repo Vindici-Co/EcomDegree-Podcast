@@ -60,7 +60,7 @@ const useStyles = makeStyles({
 		borderRadius: "20px",
 		marginRight: "20px",
 		"&:hover": {
-			background: "#F47A12"
+			background: "#e3a880"
 		}
 	},
 	plusBtn: {
@@ -72,7 +72,7 @@ const useStyles = makeStyles({
 		top: " 0px",
 		borderRadius: "20px",
 		"&:hover": {
-			background: "#F47A12"
+			background: "#e3a880"
 		}
 	}
 });
