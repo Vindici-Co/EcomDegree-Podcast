@@ -12,7 +12,7 @@ interface styleProps {
 export const customUseStyles = makeStyles({
 	Container: (styleProps: styleProps) => ({
 		height: "100vh",
-		width: styleProps.smallSize ? "100%" : "100vw",
+		width: "100vw",
 		display: "flex",
 		flexDirection: styleProps.smallSize ? "column" : "row",
 		justifyContent: styleProps.smallSize ? "center" : "space-around",
