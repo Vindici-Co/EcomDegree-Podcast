@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import PageTwoLego from "./assets/PageTwoLego.png";
-import { Fade } from "@material-ui/core/";
+import { IconButton } from "@material-ui/core";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
+import { makeStyles, useTheme } from "@material-ui/styles";
+import { Fade, useMediaQuery } from "@material-ui/core/";
+import bgPageTwo from "./assets/bgPageTwo.png";
+import { IPageProps, customUseStyles } from "./LandingPage";
 
 const TitleDivLeft = styled.p`
 	font-weight: bold;
@@ -27,36 +32,56 @@ const LeftDesc = styled.p`
 	text-align: left;
 `;
 
-export const PageTwoLeft: React.FC = (): JSX.Element => {
+const PageTwo: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
+	const smallSize = useMediaQuery("(max-width:1200px)");
+	const styleProps = { smallSize };
+	const classes = customUseStyles(styleProps);
 	return (
-		<>
-			<Fade in={true} timeout={1500}>
-				<TitleDivLeft>
-					Latest Youtube
-					<br /> Video
-					<LeftDesc>
-						A Case Study on how EDU student Sam Maxwell made $10,000 his first <br />
-						weeek dropshipping. Tune in to learn you can apply Sam’s key points of <br />
-						advice to your ecommerce business.
-					</LeftDesc>
-				</TitleDivLeft>
+		<div
+			className={classes.Container}
+			style={{
+				backgroundImage: `url(${bgPageTwo})`,
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover"
+			}}
+		>
+			<Fade in={true} timeout={1000}>
+				<div className={classes.OuterLeftContainer}>
+					<div className={classes.InnerLeftContainer}>
+						<TitleDivLeft>
+							Latest Youtube
+							<br /> Video
+							<LeftDesc>
+								A Case Study on how EDU student Sam Maxwell made $10,000 his first <br />
+								weeek dropshipping. Tune in to learn you can apply Sam’s key points of{" "}
+								<br />
+								advice to your ecommerce business.
+							</LeftDesc>
+						</TitleDivLeft>
+					</div>
+					<div className={classes.Btns}>
+						<IconButton className={classes.minusBtn} onClick={() => props.pageChange(-1)}>
+							<ArrowLeft style={{ fontSize: 50 }} />
+						</IconButton>
+						<IconButton className={classes.plusBtn} onClick={() => props.pageChange(1)}>
+							<ArrowRight style={{ fontSize: 50 }} />
+						</IconButton>
+					</div>
+				</div>
 			</Fade>
-		</>
+			<Fade in={true} timeout={1000}>
+				<div className={classes.RightContainer}>
+					<img
+						src={PageTwoLego}
+						alt="PageTwoLego"
+						style={{
+							margin: "0px 360px 0px 0px"
+						}}
+					/>
+				</div>
+			</Fade>
+		</div>
 	);
 };
 
-export const PageTwoRight: React.FC = (): JSX.Element => {
-	return (
-		<>
-			<Fade in={true} timeout={2000}>
-				<img
-					src={PageTwoLego}
-					alt="PageTwoLego"
-					style={{
-						margin: "0px 360px 0px 0px"
-					}}
-				/>
-			</Fade>
-		</>
-	);
-};
+export default PageTwo;

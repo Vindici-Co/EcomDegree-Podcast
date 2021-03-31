@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import MenuIcon from "@material-ui/icons/Menu";
+import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 
-import navLogo from "./assets/navLogo.png";
+// import navLogo from "./assets/navLogo.png";
 import navLogoSVG from "./assets/navLogoSVG.svg";
 import pipe from "./assets/pipe.png";
-import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -40,7 +39,10 @@ const useStyles = makeStyles((theme: Theme) =>
 			minWidth: 85,
 			width: 85
 		},
-		icons: {
+		iconGrid: {
+			width: "50%"
+		},
+		tabsGrid: {
 			width: "50%"
 		},
 		icon: {
@@ -60,6 +62,17 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		indictator: {
 			display: "none"
+		},
+		mobileAppBar: {
+			top: "auto",
+			bottom: 0,
+			background: "white"
+		},
+		mobileLogo: {
+			marginRight: "auto"
+		},
+		MenuIcon: {
+			marginLeft: "auto"
 		}
 	})
 );
@@ -67,6 +80,9 @@ const useStyles = makeStyles((theme: Theme) =>
 const Navbar = (): JSX.Element => {
 	// component state
 	const classes = useStyles();
+	const theme = useTheme();
+	const smallSize = useMediaQuery(theme.breakpoints.down(1200));
+
 	const [tabValue, setTabValue] = useState(0);
 
 	// handle tab change
@@ -111,9 +127,9 @@ const Navbar = (): JSX.Element => {
 			/>
 		));
 
-	return (
-		<div>
-			<AppBar className={classes.AppBar} color="secondary" position="fixed">
+	const DesktopNavbar = (): JSX.Element => (
+		<>
+			<AppBar elevation={0} className={classes.AppBar} position="fixed">
 				<Toolbar>
 					<IconButton>
 						<img
@@ -127,7 +143,7 @@ const Navbar = (): JSX.Element => {
 						alt="pipe"
 						style={{ margin: "0px 50px 0px 0px", height: "30px" }}
 					/>
-					<Grid container justify="flex-start">
+					<Grid container justify="flex-start" className={classes.tabsGrid}>
 						<Tabs
 							value={tabValue}
 							onChange={handleTabChange}
@@ -140,7 +156,7 @@ const Navbar = (): JSX.Element => {
 
 					<Grid
 						container
-						className={classes.icons}
+						className={classes.iconGrid}
 						justify="flex-end"
 						alignItems="center"
 					>
@@ -159,8 +175,25 @@ const Navbar = (): JSX.Element => {
 					</Grid>
 				</Toolbar>
 			</AppBar>
-		</div>
+		</>
 	);
+
+	const MobileNavbar = (): JSX.Element => (
+		<>
+			<AppBar position="fixed" className={classes.mobileAppBar}>
+				<Toolbar>
+					<IconButton edge="start" aria-label="logo" className={classes.mobileLogo}>
+						<Typography>ECOM DEGREE UNIVERSITY</Typography>
+					</IconButton>
+					<IconButton edge="end" aria-label="open drawer" className={classes.MenuIcon}>
+						<MenuIcon style={{ color: "#F49A12", height: "40px", width: "40px" }} />
+					</IconButton>
+				</Toolbar>
+			</AppBar>
+		</>
+	);
+
+	return <>{smallSize ? MobileNavbar() : DesktopNavbar()}</>;
 };
 
 export default Navbar;
