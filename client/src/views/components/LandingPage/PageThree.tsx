@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import PageThreeThumbnail from "./assets/PageThreeThumbnail.png";
 import ApplePodcasts from "./assets/ApplePodcasts.png";
-import { Fade } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
+import { makeStyles, useTheme } from "@material-ui/styles";
+import { Fade, useMediaQuery } from "@material-ui/core/";
+import { IPageProps, customUseStyles } from "./LandingPage";
 
 const TitleDivLeft = styled.p`
 	font-family: ${(props) => props.theme.fonts.main};
@@ -29,46 +33,69 @@ const LeftDesc = styled.p`
 	text-align: left;
 `;
 
-export const PageThreeLeft: React.FC = () => {
+const PageThree: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
+	const smallSize = useMediaQuery("(max-width:1200px)");
+	const styleProps = { smallSize };
+	const classes = customUseStyles(styleProps);
+
 	return (
 		<>
-			<Fade in={true} timeout={1500}>
-				<div>
-					<img
-						src={ApplePodcasts}
-						alt="ApplePodcasts"
-						style={{
-							height: "58.18px",
-							width: "240px"
-						}}
-					/>
-					<TitleDivLeft>
-						Listen Now <br />
-						<Orange>Mindset Mastery</Orange>
-						<LeftDesc>
-							When our team provides design and digital marketing fashion
-							<br /> design. The app provides design and digital graphic design.
-						</LeftDesc>
-					</TitleDivLeft>
-				</div>
-			</Fade>
+			<div
+				className={classes.Container}
+				style={{
+					backgroundColor: "#030314",
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "cover"
+				}}
+			>
+				<Fade in={true} timeout={1000}>
+					<div className={classes.OuterLeftContainer}>
+						<div className={classes.InnerLeftContainer}>
+							<img
+								src={ApplePodcasts}
+								alt="ApplePodcasts"
+								style={{
+									height: "58.18px",
+									width: "240px"
+								}}
+							/>
+							<TitleDivLeft style={{ fontSize: smallSize ? "50px" : "75px" }}>
+								Listen Now <br />
+								<Orange>Mindset Mastery</Orange>
+								<LeftDesc>
+									When our team provides design and digital marketing fashion
+									<br /> design. The app provides design and digital graphic design.
+								</LeftDesc>
+							</TitleDivLeft>
+						</div>
+						<div className={classes.Btns}>
+							<IconButton
+								className={classes.minusBtn}
+								onClick={() => props.pageChange(-1)}
+							>
+								<ArrowLeft style={{ fontSize: 50 }} />
+							</IconButton>
+							<IconButton className={classes.plusBtn} onClick={() => props.pageChange(1)}>
+								<ArrowRight style={{ fontSize: 50 }} />
+							</IconButton>
+						</div>
+					</div>
+				</Fade>
+				<Fade in={true} timeout={1000}>
+					<div className={classes.RightContainer}>
+						<img
+							src={PageThreeThumbnail}
+							alt="PageThreeThumbnail"
+							style={{
+								margin: "0px 260px 0px 0px",
+								overflow: "hidden"
+							}}
+						/>
+					</div>
+				</Fade>
+			</div>
 		</>
 	);
 };
 
-export const PageThreeRight: React.FC = (): JSX.Element => {
-	return (
-		<>
-			<Fade in={true} timeout={2000}>
-				<img
-					src={PageThreeThumbnail}
-					alt="PageThreeThumbnail"
-					style={{
-						margin: "0px 260px 0px 0px",
-						overflow: "hidden"
-					}}
-				/>
-			</Fade>
-		</>
-	);
-};
+export default PageThree;

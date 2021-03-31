@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Fade } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/styles";
+import { Fade, useMediaQuery } from "@material-ui/core/";
+import bgPageOne from "./assets/bgPageOne.png";
+import { IconButton } from "@material-ui/core";
+import { ArrowRight, ArrowLeft } from "@material-ui/icons";
+import { IPageProps, customUseStyles } from "./LandingPage";
 
 const TitleDivLeft = styled.p`
 	font-weight: bold;
-	font-size: 75px;
 	line-height: 90px;
 	letter-spacing: -2.25px;
 	color: white;
@@ -26,24 +30,54 @@ const LeftDesc = styled.p`
 	font-family: ${(props) => props.theme.fonts.secondary};
 `;
 
-export const PageOneLeft: React.FC = (): JSX.Element => {
+const PageOne: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
+	const smallSize = useMediaQuery("(max-width:1200px)");
+	const styleProps = { smallSize };
+	const classes = customUseStyles(styleProps);
+
+	useEffect(() => {
+		console.log(smallSize);
+	}, [smallSize]);
+
 	return (
-		<>
-			<Fade in={true} timeout={1500}>
-				<TitleDivLeft>
-					6+ Hours of <br />
-					<Orange>Free Game.</Orange>
-					<LeftDesc>
-						When our team provides design and digital marketing fashion design. The
-						<br />
-						app provides design and digital graphic design.
-					</LeftDesc>
-				</TitleDivLeft>
+		<div
+			className={classes.Container}
+			style={{
+				backgroundImage: `url(${bgPageOne})`,
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover"
+			}}
+		>
+			<Fade in={true} timeout={1000}>
+				<div className={classes.OuterLeftContainer}>
+					<div className={classes.InnerLeftContainer}>
+						<TitleDivLeft style={{ fontSize: smallSize ? "50px" : "75px" }}>
+							6+ Hours of <br />
+							<Orange>Free Game.</Orange>
+							<LeftDesc>
+								When our team provides design and digital marketing fashion design. The
+								<br />
+								app provides design and digital graphic design.
+							</LeftDesc>
+						</TitleDivLeft>
+					</div>
+					<div className={classes.Btns}>
+						<IconButton className={classes.minusBtn} onClick={() => props.pageChange(-1)}>
+							<ArrowLeft style={{ fontSize: 50 }} />
+						</IconButton>
+						<IconButton className={classes.plusBtn} onClick={() => props.pageChange(1)}>
+							<ArrowRight style={{ fontSize: 50 }} />
+						</IconButton>
+					</div>
+				</div>
 			</Fade>
-		</>
+			{smallSize ? null : (
+				<div className={classes.RightContainer}>
+					<></>
+				</div>
+			)}
+		</div>
 	);
 };
 
-export const PageOneRight: React.FC = (): JSX.Element => {
-	return <></>;
-};
+export default PageOne;
