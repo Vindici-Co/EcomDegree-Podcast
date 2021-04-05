@@ -5,6 +5,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -12,9 +16,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 
 // import navLogo from "./assets/navLogo.png";
-import navLogoSVG from "./assets/navLogoSVG.svg";
-import pipe from "./assets/pipe.png";
-
+import { ReactComponent as NavLogo } from "./assets/NavLogo.svg";
+import { ReactComponent as Pipe } from "./assets/Pipe.svg";
+import { ReactComponent as NavHamburger } from "./assets/NavHamburger.svg";
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		AppBar: {
@@ -30,7 +34,8 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		activeTab: {
 			fontSize: "20px",
-			color: "#F49A12",
+			color: "white",
+			// color: "#F49A12",
 			fontWeight: 700,
 			lineHeight: "25px"
 		},
@@ -69,11 +74,26 @@ const useStyles = makeStyles((theme: Theme) =>
 			background: "white"
 		},
 		mobileLogo: {
-			marginRight: "auto"
+			marginRight: "auto",
+			color: "black"
 		},
 		MenuIcon: {
 			marginLeft: "auto"
-		}
+		},
+		drawer: {
+			background: " #F49A12",
+			color: "white"
+		},
+		drawerListItem: {
+			textAlign: "right"
+		},
+		drawerListItemSelected: {
+			fontSize: "20px",
+			color: "white",
+			fontWeight: 700,
+			lineHeight: "25px"
+		},
+		text: {}
 	})
 );
 
@@ -84,6 +104,7 @@ const Navbar = (): JSX.Element => {
 	const smallSize = useMediaQuery(theme.breakpoints.down(1200));
 
 	const [tabValue, setTabValue] = useState(0);
+	const [openDrawer, setOpenDrawer] = useState(false);
 
 	// handle tab change
 	const handleTabChange = (event: React.ChangeEvent<any>, newValue: number) => {
@@ -129,20 +150,12 @@ const Navbar = (): JSX.Element => {
 
 	const DesktopNavbar = (): JSX.Element => (
 		<>
-			<AppBar elevation={0} className={classes.AppBar} position="fixed">
+			<AppBar elevation={0} className={classes.AppBar} position="absolute">
 				<Toolbar>
-					<IconButton>
-						<img
-							src={navLogoSVG}
-							alt="navLogo"
-							style={{ width: "208px", height: "16.64px" }}
-						/>
-					</IconButton>
-					<img
-						src={pipe}
-						alt="pipe"
-						style={{ margin: "0px 50px 0px 0px", height: "30px" }}
-					/>
+					<NavLogo />
+					<div style={{ margin: "0px 30px 0px 30px" }}>
+						<Pipe />
+					</div>
 					<Grid container justify="flex-start" className={classes.tabsGrid}>
 						<Tabs
 							value={tabValue}
@@ -153,7 +166,6 @@ const Navbar = (): JSX.Element => {
 							{renderTabs()}
 						</Tabs>
 					</Grid>
-
 					<Grid
 						container
 						className={classes.iconGrid}
@@ -166,11 +178,10 @@ const Navbar = (): JSX.Element => {
 						<IconButton edge="end" className={classes.icon}>
 							<LinkedInIcon />
 						</IconButton>
-						<img
-							src={pipe}
-							alt="pipe"
-							style={{ margin: "0px 30px 0px 30px", height: "30px" }}
-						/>
+						<div style={{ margin: "0px 30px 0px 30px" }}>
+							<Pipe />
+						</div>
+
 						<Button className={classes.navBtn}>Access Course</Button>
 					</Grid>
 				</Toolbar>
@@ -182,18 +193,60 @@ const Navbar = (): JSX.Element => {
 		<>
 			<AppBar position="fixed" className={classes.mobileAppBar}>
 				<Toolbar>
-					<IconButton edge="start" aria-label="logo" className={classes.mobileLogo}>
-						<Typography>ECOM DEGREE UNIVERSITY</Typography>
-					</IconButton>
-					<IconButton edge="end" aria-label="open drawer" className={classes.MenuIcon}>
+					{/* <IconButton edge="start" aria-label="logo" className={classes.mobileLogo}>
+						<NavLogo />
+					</IconButton> */}
+					<Typography className={classes.mobileLogo}>ECOM DEGREE UNIVERSITY</Typography>
+
+					<IconButton
+						edge="end"
+						aria-label="open drawer"
+						className={classes.MenuIcon}
+						onClick={() => setOpenDrawer(!openDrawer)}
+					>
 						<MenuIcon style={{ color: "#F49A12", height: "40px", width: "40px" }} />
 					</IconButton>
+					{/* <NavHamburger style={{ color: "#F49A12", height: "40px", width: "40px" }} /> */}
 				</Toolbar>
 			</AppBar>
 		</>
 	);
 
-	return <>{smallSize ? MobileNavbar() : DesktopNavbar()}</>;
+	return (
+		<>
+			{smallSize ? MobileNavbar() : DesktopNavbar()}
+			<SwipeableDrawer
+				open={openDrawer}
+				onClose={() => setOpenDrawer(false)}
+				onOpen={() => setOpenDrawer(true)}
+				classes={{ paper: classes.drawer }}
+				transitionDuration={450}
+				anchor="bottom"
+			>
+				<List>
+					{tabData.map((tab) => (
+						<ListItem
+							className={classes.drawerListItem}
+							button
+							key={tab.key}
+							onClick={(e) => {
+								setOpenDrawer(!openDrawer);
+								handleTabChange(e, tab.key);
+							}}
+							selected={tab.key === tabValue ? true : false}
+							classes={{ selected: classes.drawerListItemSelected }}
+						>
+							<ListItemText
+								primary={tab.label}
+								className={classes.text}
+								disableTypography
+							/>
+						</ListItem>
+					))}
+				</List>
+			</SwipeableDrawer>
+		</>
+	);
 };
 
 export default Navbar;
