@@ -20,7 +20,8 @@ export const customUseStyles = makeStyles({
 		padding: "0",
 		margin: "0",
 		color: "white",
-		overflow: styleProps.smallSize ? "hidden" : ""
+		// overflow: styleProps.smallSize ? "hidden" : ""
+		top: 0
 	}),
 
 	OuterLeftContainer: {
