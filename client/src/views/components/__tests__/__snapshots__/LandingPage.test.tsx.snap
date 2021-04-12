@@ -1,0 +1,605 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingPage/> renders without errors 1`] = `
+<div>
+  <div
+    data-testid="landingPageContainer"
+  >
+    <div
+      data-testid="navbarContainer"
+    >
+      <header
+        class="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorPrimary makeStyles-AppBar-1 MuiPaper-elevation0"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <svg>
+            NavLogo.svg
+          </svg>
+          <div
+            style="margin: 0px 30px 0px 30px;"
+          >
+            <svg>
+              Pipe.svg
+            </svg>
+          </div>
+          <div
+            class="MuiGrid-root makeStyles-tabsGrid-7 MuiGrid-container"
+          >
+            <div
+              class="MuiTabs-root makeStyles-tabs-2"
+            >
+              <div
+                class="MuiTabs-scroller MuiTabs-fixed"
+                style="overflow: hidden;"
+              >
+                <div
+                  class="MuiTabs-flexContainer"
+                  role="tablist"
+                >
+                  <button
+                    aria-selected="true"
+                    class="MuiButtonBase-root MuiTab-root makeStyles-tabOverrides-5 MuiTab-textColorInherit makeStyles-activeTab-4 Mui-selected"
+                    role="tab"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <span
+                      class="MuiTab-wrapper"
+                    >
+                      Home
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-selected="false"
+                    class="MuiButtonBase-root MuiTab-root makeStyles-tabOverrides-5 MuiTab-textColorInherit makeStyles-tab-3"
+                    role="tab"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="MuiTab-wrapper"
+                    >
+                      Learn
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-selected="false"
+                    class="MuiButtonBase-root MuiTab-root makeStyles-tabOverrides-5 MuiTab-textColorInherit makeStyles-tab-3"
+                    role="tab"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="MuiTab-wrapper"
+                    >
+                      Courses
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-selected="false"
+                    class="MuiButtonBase-root MuiTab-root makeStyles-tabOverrides-5 MuiTab-textColorInherit makeStyles-tab-3"
+                    role="tab"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="MuiTab-wrapper"
+                    >
+                      FAQ
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-selected="false"
+                    class="MuiButtonBase-root MuiTab-root makeStyles-tabOverrides-5 MuiTab-textColorInherit makeStyles-tab-3"
+                    role="tab"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="MuiTab-wrapper"
+                    >
+                      Contact
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <span
+                  class="PrivateTabIndicator-root-18 PrivateTabIndicator-colorSecondary-20 MuiTabs-indicator makeStyles-indictator-10"
+                  style="left: 0px; width: 0px;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root makeStyles-iconGrid-6 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-flex-end"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-icon-8 MuiIconButton-edgeEnd"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-icon-8 MuiIconButton-edgeEnd"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+            <div
+              style="margin: 0px 30px 0px 30px;"
+            >
+              <svg>
+                Pipe.svg
+              </svg>
+            </div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-navBtn-9"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Access Course
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <div
+        class="PrivateSwipeArea-root-32 PrivateSwipeArea-anchorBottom-36"
+        style="height: 20px;"
+      />
+    </div>
+    <div
+      class="makeStyles-Container-22 makeStyles-Container-29"
+      data-testid="pageOneContainer"
+      style="background-image: url(bgPageOne.png); background-repeat: no-repeat; background-size: cover;"
+    >
+      <div
+        class="makeStyles-OuterLeftContainer-23"
+        style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      >
+        <div
+          class="makeStyles-InnerLeftContainer-24 makeStyles-InnerLeftContainer-30"
+        >
+          <p
+            class="sc-bdfBwQ jfYkcJ"
+            style="font-size: 75px;"
+          >
+            6+ Hours of 
+            <br />
+            <span
+              class="sc-gsTCUz FJRCo"
+            >
+              Free Game.
+            </span>
+            <p
+              class="sc-dlfnbm eOPBKP"
+            >
+              When our team provides design and digital marketing fashion design. The
+              <br />
+              app provides design and digital graphic design.
+            </p>
+          </p>
+        </div>
+        <div
+          class="makeStyles-Btns-25"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-minusBtn-27"
+            data-testid="minusButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                style="font-size: 50px;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14 7l-5 5 5 5V7z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-plusBtn-28"
+            data-testid="plusButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                style="font-size: 50px;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 17l5-5-5-5v10z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="makeStyles-RightContainer-26 makeStyles-RightContainer-31"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LandingPage component: <PageOne/> renders without errors 1`] = `
+<div>
+  <div
+    class="makeStyles-Container-37 makeStyles-Container-44"
+    data-testid="pageOneContainer"
+    style="background-image: url(bgPageOne.png); background-repeat: no-repeat; background-size: cover;"
+  >
+    <div
+      class="makeStyles-OuterLeftContainer-38"
+      style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="makeStyles-InnerLeftContainer-39 makeStyles-InnerLeftContainer-45"
+      >
+        <p
+          class="sc-bdfBwQ jfYkcJ"
+          style="font-size: 75px;"
+        >
+          6+ Hours of 
+          <br />
+          <span
+            class="sc-gsTCUz FJRCo"
+          >
+            Free Game.
+          </span>
+          <p
+            class="sc-dlfnbm eOPBKP"
+          >
+            When our team provides design and digital marketing fashion design. The
+            <br />
+            app provides design and digital graphic design.
+          </p>
+        </p>
+      </div>
+      <div
+        class="makeStyles-Btns-40"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-minusBtn-42"
+          data-testid="minusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14 7l-5 5 5 5V7z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-plusBtn-43"
+          data-testid="plusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 17l5-5-5-5v10z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="makeStyles-RightContainer-41 makeStyles-RightContainer-46"
+    />
+  </div>
+</div>
+`;
+
+exports[`LandingPage component: <PageThree/> renders without errors 1`] = `
+<div>
+  <div
+    class="makeStyles-Container-57 makeStyles-Container-64"
+    data-testid="pageThreeContainer"
+    style="background-color: rgb(3, 3, 20); background-repeat: no-repeat; background-size: cover;"
+  >
+    <div
+      class="makeStyles-OuterLeftContainer-58"
+      style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="makeStyles-InnerLeftContainer-59 makeStyles-InnerLeftContainer-65"
+      >
+        <img
+          alt="ApplePodcasts"
+          src="ApplePodcasts.png"
+          style="height: 58.18px; width: 240px;"
+        />
+        <p
+          class="sc-gKsewC jokwbq"
+          style="font-size: 75px;"
+        >
+          Listen Now 
+          <br />
+          <span
+            class="sc-iBPRYJ ddIViO"
+          >
+            Mindset Mastery
+          </span>
+          <p
+            class="sc-fubCfw bYKeHr"
+          >
+            When our team provides design and digital marketing fashion
+            <br />
+             design. The app provides design and digital graphic design.
+          </p>
+        </p>
+      </div>
+      <div
+        class="makeStyles-Btns-60"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-minusBtn-62"
+          data-testid="minusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14 7l-5 5 5 5V7z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-plusBtn-63"
+          data-testid="plusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 17l5-5-5-5v10z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="makeStyles-RightContainer-61 makeStyles-RightContainer-66"
+      style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <img
+        alt="PageThreeThumbnail"
+        src="PageThreeThumbnail.png"
+        style="margin: 0px 260px 0px 0px; overflow: hidden;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LandingPage component: <PageTwo/> renders without errors 1`] = `
+<div>
+  <div
+    class="makeStyles-Container-47 makeStyles-Container-54"
+    data-testid="pageTwoContainer"
+    style="background-image: url(bgPageTwo.png); background-repeat: no-repeat; background-size: cover;"
+  >
+    <div
+      class="makeStyles-OuterLeftContainer-48"
+      style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="makeStyles-InnerLeftContainer-49 makeStyles-InnerLeftContainer-55"
+      >
+        <p
+          class="sc-hKgILt gqkqcH"
+        >
+          Latest Youtube
+          <br />
+           Video
+          <p
+            class="sc-jSgupP kAFvVX"
+          >
+            A Case Study on how EDU student Sam Maxwell made $10,000 his first 
+            <br />
+            weeek dropshipping. Tune in to learn you can apply Sam’s key points of
+             
+            <br />
+            advice to your ecommerce business.
+          </p>
+        </p>
+      </div>
+      <div
+        class="makeStyles-Btns-50"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-minusBtn-52"
+          data-testid="minusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14 7l-5 5 5 5V7z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-plusBtn-53"
+          data-testid="plusButton"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 50px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 17l5-5-5-5v10z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="makeStyles-RightContainer-51 makeStyles-RightContainer-56"
+      style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <img
+        alt="PageTwoLego"
+        src="PageTwoLego.png"
+        style="margin: 0px 360px 0px 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
