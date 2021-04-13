@@ -9,7 +9,7 @@ import { Fade, useMediaQuery } from "@material-ui/core/";
 import { IPageProps, customUseStyles } from "./LandingPage";
 
 const TitleDivLeft = styled.p`
-	font-family: ${(props) => props.theme.fonts.main};
+	font-family: ${props => props.theme.fonts.main};
 	font-size: 75px;
 	font-style: normal;
 	font-weight: 700;
@@ -20,11 +20,11 @@ const TitleDivLeft = styled.p`
 `;
 
 const Orange = styled.span`
-	color: ${(props) => props.theme.colors.main.orange};
+	color: ${props => props.theme.colors.main.orange};
 `;
 
 const LeftDesc = styled.p`
-	font-family: ${(props) => props.theme.fonts.secondary};
+	font-family: ${props => props.theme.fonts.secondary};
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -47,6 +47,7 @@ const PageThree: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover"
 				}}
+				data-testid="pageThreeContainer"
 			>
 				<Fade in={true} timeout={1000}>
 					<div className={classes.OuterLeftContainer}>
@@ -72,10 +73,15 @@ const PageThree: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 							<IconButton
 								className={classes.minusBtn}
 								onClick={() => props.pageChange(-1)}
+								data-testid="minusButton"
 							>
 								<ArrowLeft style={{ fontSize: 50 }} />
 							</IconButton>
-							<IconButton className={classes.plusBtn} onClick={() => props.pageChange(1)}>
+							<IconButton
+								className={classes.plusBtn}
+								onClick={() => props.pageChange(1)}
+								data-testid="plusButton"
+							>
 								<ArrowRight style={{ fontSize: 50 }} />
 							</IconButton>
 						</div>

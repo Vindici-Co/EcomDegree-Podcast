@@ -81,14 +81,14 @@ export interface IPageProps {
 	pageChange(event: number): void;
 }
 
-const LandingPage: React.FC = (): JSX.Element => {
+const LandingPage: React.FC = () => {
 	const [page, setPage] = useState(0);
 
 	const pageChange = (event: number): void => {
-		const numPages = 3;
-		let newPage = (page + event) % numPages;
+		const NUM_PAGES = 3;
+		let newPage = (page + event) % NUM_PAGES;
 		while (newPage < 0) {
-			newPage += numPages;
+			newPage += NUM_PAGES;
 		}
 		setPage(newPage);
 	};
@@ -100,10 +100,10 @@ const LandingPage: React.FC = (): JSX.Element => {
 	];
 
 	return (
-		<>
+		<div data-testid="landingPageContainer">
 			<Navbar />
 			{newPages[page]}
-		</>
+		</div>
 	);
 };
 export default LandingPage;

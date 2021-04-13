@@ -14,16 +14,16 @@ const TitleDivLeft = styled.p`
 	line-height: 90px;
 	letter-spacing: -2.25px;
 	color: white;
-	font-family: ${(props) => props.theme.fonts.main};
+	font-family: ${props => props.theme.fonts.main};
 	margin: 0;
 `;
 
 const Orange = styled.span`
-	color: ${(props) => props.theme.colors.main.orange};
+	color: ${props => props.theme.colors.main.orange};
 `;
 
 const LeftDesc = styled.p`
-	font-family: ${(props) => props.theme.fonts.secondary};
+	font-family: ${props => props.theme.fonts.secondary};
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -44,6 +44,7 @@ const PageTwo: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover"
 			}}
+			data-testid="pageTwoContainer"
 		>
 			<Fade in={true} timeout={1000}>
 				<div className={classes.OuterLeftContainer}>
@@ -60,10 +61,18 @@ const PageTwo: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 						</TitleDivLeft>
 					</div>
 					<div className={classes.Btns}>
-						<IconButton className={classes.minusBtn} onClick={() => props.pageChange(-1)}>
+						<IconButton
+							className={classes.minusBtn}
+							onClick={() => props.pageChange(-1)}
+							data-testid="minusButton"
+						>
 							<ArrowLeft style={{ fontSize: 50 }} />
 						</IconButton>
-						<IconButton className={classes.plusBtn} onClick={() => props.pageChange(1)}>
+						<IconButton
+							className={classes.plusBtn}
+							onClick={() => props.pageChange(1)}
+							data-testid="plusButton"
+						>
 							<ArrowRight style={{ fontSize: 50 }} />
 						</IconButton>
 					</div>

@@ -137,7 +137,7 @@ const Navbar = (): JSX.Element => {
 
 	/// func to render tab data
 	const renderTabs = () =>
-		tabData.map((tab) => (
+		tabData.map(tab => (
 			<Tab
 				key={tab.key}
 				label={tab.label}
@@ -213,7 +213,7 @@ const Navbar = (): JSX.Element => {
 	);
 
 	return (
-		<>
+		<div data-testid="navbarContainer">
 			{smallSize ? MobileNavbar() : DesktopNavbar()}
 			<SwipeableDrawer
 				open={openDrawer}
@@ -224,12 +224,12 @@ const Navbar = (): JSX.Element => {
 				anchor="bottom"
 			>
 				<List>
-					{tabData.map((tab) => (
+					{tabData.map(tab => (
 						<ListItem
 							className={classes.drawerListItem}
 							button
 							key={tab.key}
-							onClick={(e) => {
+							onClick={e => {
 								setOpenDrawer(!openDrawer);
 								handleTabChange(e, tab.key);
 							}}
@@ -245,7 +245,7 @@ const Navbar = (): JSX.Element => {
 					))}
 				</List>
 			</SwipeableDrawer>
-		</>
+		</div>
 	);
 };
 
