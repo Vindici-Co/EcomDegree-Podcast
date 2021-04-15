@@ -2,7 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownPopup from "./DropdownPopup";
 import DownwardArrow from "../../Icons/DownardArrow";
+import { ArrowDropDown } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 
+export const customUseStyles = makeStyles({
+  button: {
+    backgroundColor: "#505355",
+    width: "60px",
+    height: "60px",
+    borderRadius: "20px",
+    cursor: "pointer",
+    "&:hover": {
+      background: "#5b5e5f"
+    }
+  },
+});
 /**
  * @interface IDropdownProps
  * @field { Array<string> } optionsArray - an array of strings representing the dropdown options
@@ -77,6 +92,8 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps) => {
   /** set the inital state as the first item in the options array */
   const [dropdownState, setDropdownState] = useState(props.optionsArray[0]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const classes = customUseStyles();
+
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -97,9 +114,12 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps) => {
         )}
       </DropdownRoot>
       <Spacing />
-      <CloseButtonRoot onClick={()=> handleOpen()}>
+      {/* <CloseButtonRoot onClick={() => handleOpen()}>
         <DownwardArrow />
-      </CloseButtonRoot>
+      </CloseButtonRoot> */}
+      <IconButton className={classes.button} onClick={() => handleOpen()}>
+							<ArrowDropDown style={{ fontSize: 50, color:"orange" }} />
+						</IconButton>
     </ControlsRoot>
   );
 };
