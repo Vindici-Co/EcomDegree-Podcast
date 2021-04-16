@@ -7,29 +7,6 @@ import { IconButton } from "@material-ui/core";
 import { ArrowRight, ArrowLeft } from "@material-ui/icons";
 import { IPageProps, customUseStyles } from "./LandingPage";
 
-const TitleDivLeft = styled.p`
-	font-weight: bold;
-	line-height: 90px;
-	letter-spacing: -2.25px;
-	color: white;
-	font-family: ${props => props.theme.fonts.main};
-	margin: 0;
-`;
-
-const Orange = styled.span`
-	color: ${props => props.theme.colors.main.orange};
-`;
-
-const LeftDesc = styled.p`
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 24px;
-	letter-spacing: 0.5px;
-	text-align: left;
-	font-family: ${props => props.theme.fonts.secondary};
-`;
-
 const PageOne: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 	const smallSize = useMediaQuery("(max-width:1200px)");
 	const styleProps = { smallSize };
@@ -38,6 +15,29 @@ const PageOne: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 	useEffect(() => {
 		console.log(smallSize);
 	}, [smallSize]);
+
+	const TitleDivLeft = styled.p`
+		font-weight: bold;
+		line-height: ${smallSize ? "65px" : "90px"};
+		letter-spacing: -2.25px;
+		color: white;
+		font-family: ${(props) => props.theme.fonts.main};
+		margin: 0;
+	`;
+
+	const Orange = styled.span`
+		color: ${(props) => props.theme.colors.main.orange};
+	`;
+
+	const LeftDesc = styled.p`
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0.5px;
+		text-align: left;
+		font-family: ${(props) => props.theme.fonts.secondary};
+	`;
 
 	return (
 		<div
@@ -53,12 +53,12 @@ const PageOne: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 				<div className={classes.OuterLeftContainer}>
 					<div className={classes.InnerLeftContainer}>
 						<TitleDivLeft style={{ fontSize: smallSize ? "50px" : "75px" }}>
-							6+ Hours of <br />
-							<Orange>Free Game.</Orange>
+							<Orange>6+</Orange> Hours of <br />
+							Free Game.
 							<LeftDesc>
 								When our team provides design and digital marketing fashion design. The
-								<br />
-								app provides design and digital graphic design.
+								{smallSize ? null : <br />} app provides design and digital graphic
+								design.
 							</LeftDesc>
 						</TitleDivLeft>
 					</div>

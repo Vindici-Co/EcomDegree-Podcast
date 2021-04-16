@@ -14,7 +14,7 @@ export const customUseStyles = makeStyles({
 		height: "100vh",
 		width: "100vw",
 		display: "flex",
-		flexDirection: styleProps.smallSize ? "column" : "row",
+		flexDirection: "row",
 		justifyContent: styleProps.smallSize ? "center" : "space-around",
 		alignItems: "center",
 		padding: "0",
@@ -26,7 +26,9 @@ export const customUseStyles = makeStyles({
 
 	OuterLeftContainer: {
 		display: "flex",
-		flexDirection: "column"
+		flexDirection: "column",
+		paddingLeft: "10px",
+		paddingRight: "10px"
 	},
 
 	InnerLeftContainer: (styleProps: styleProps) => ({
@@ -35,6 +37,7 @@ export const customUseStyles = makeStyles({
 		justifyContent: "center",
 		width: styleProps.smallSize ? "100%" : "743.688px",
 		height: styleProps.smallSize ? "100%" : "349.969px",
+		maxWidth: styleProps.smallSize ? "400px" : "743.688px",
 		margin: "0"
 	}),
 	Btns: {
